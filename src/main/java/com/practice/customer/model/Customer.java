@@ -2,6 +2,7 @@ package com.practice.customer.model;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.Cascade;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class Customer {
     private String customerName;
     private String customerEmail;
 
-    //@OneToMany
-    //private List<Account> account;
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Account> accounts;
 
 }
