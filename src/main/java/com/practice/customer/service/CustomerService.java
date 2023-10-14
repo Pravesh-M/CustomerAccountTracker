@@ -1,6 +1,7 @@
 package com.practice.customer.service;
 
 import com.practice.customer.exception.EntityNotExistException;
+import com.practice.customer.model.Account;
 import com.practice.customer.model.Customer;
 import com.practice.customer.repository.CustomerRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,9 @@ public class CustomerService {
 
     @Autowired
     private CustomerRepo repo;
+
+    @Autowired
+    private AccountService accService;
 
     public void addCustomer(Customer customer) {
         repo.save(customer);
